@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Ya_Financial_Manager</string>
+    <string name="expenses">Расходы</string>
+    <string name="incomes">Доходы</string>
+    <string name="account">Счет</string>
+    <string name="articles">Статьи</string>
+    <string name="settings">Настройки</string>
+    <string name="balance">Баланс</string>
+    <string name="currency">Валюта</string>
+    <string name="add">Добавить</string>
+    <string name="expenses_today">Расходы сегодня</string>
+    <string name="total">Всего</string>
+    <string name="incomes_today">Доходы сегодня</string>
+    <string name="my_articles">Мои статьи</string>
+    <string name="search_article">Найти статью</string>
+    <string name="logo">Логотип</string>
+    <string name="ya_financial_manager">YA Financial Manager</string>
+    <string name="my_account">Мой счет</string>
+    <string name="search_category">Найти статью</string>
+</resources>
