@@ -1,8 +1,9 @@
 [versions]
 activityCompose = "1.10.1"
 agp = "8.10.1"
-composeBom = "2025.06.00"
+composeBom = "2025.06.01"
 kotlin = "2.0.21"
+kotlinxSerializationJson = "1.8.1"
 ksp = "2.0.21-1.0.26"
 coreKtx = "1.16.0"
 junit = "4.13.2"
@@ -18,7 +19,12 @@ navigationCompose = "2.9.0"
 composeCompiler = "2.0.21"
 hiltAndroid = "2.56.2"
 hiltNavigationCompose = "1.2.0"
-accompanistSystemuicontroller = "0.27.0"
+accompanistSystemuicontroller = "0.36.0"
+kotlinxCollectionsImmutableVersion = "0.3.8"
+okhttpBom = "4.12.0"
+retrofit = "3.0.0"
+retrofit2KotlinxSerializationConverter = "1.0.0"
+compose-base-version = "1.8.3"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
@@ -38,6 +44,7 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieCompose" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
@@ -46,6 +53,18 @@ hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltA
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltAndroid" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanistSystemuicontroller" }
+jetbrains-kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutableVersion" }
+okhttp = { module = "com.squareup.okhttp3:okhttp" }
+okhttp-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okhttpBom" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor" }
+retrofit2-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2KotlinxSerializationConverter" }
+compose-material = { module = "androidx.compose.material:material", version.ref = "compose-base-version" }
+compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "compose-base-version" }
+compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "compose-base-version" }
+
+[bundles]
+compose-base = ["compose-foundation", "compose-ui", "compose-material"]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

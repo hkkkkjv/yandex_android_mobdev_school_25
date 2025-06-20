@@ -1,5 +1,6 @@
 package ru.kpfu.itis.ya_financial_manager.presentation.common.ui
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
@@ -15,6 +16,7 @@ import ru.kpfu.itis.ya_financial_manager.R
 @Composable
 fun FabAddButton(
     modifier: Modifier = Modifier,
+    @StringRes contentDescription: Int?,
     onClick: () -> Unit
 ) {
     FloatingActionButton(
@@ -22,11 +24,16 @@ fun FabAddButton(
         shape = CircleShape,
         modifier = modifier,
         containerColor = MaterialTheme.colorScheme.primary,
-        elevation = FloatingActionButtonDefaults.elevation(0.dp)
+        elevation = FloatingActionButtonDefaults.elevation(
+            defaultElevation = 0.dp,
+            pressedElevation = 0.dp,
+            focusedElevation = 0.dp,
+            hoveredElevation = 0.dp
+        )
     ) {
         Icon(
             painter = painterResource(id = R.drawable.ic_outline_add_24),
-            contentDescription = stringResource(R.string.add),
+            contentDescription = contentDescription?.let { stringResource(it) },
             tint = MaterialTheme.colorScheme.onPrimary
         )
     }
