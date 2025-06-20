@@ -1,7 +1,5 @@
 package ru.kpfu.itis.ya_financial_manager.presentation.common.ui
 
-import androidx.annotation.DrawableRes
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -24,7 +22,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -38,7 +35,6 @@ fun ListItem(
     subtitle: String? = null,
     trailText: String? = null,
     trailIcon: ImageVector? = null,
-    @DrawableRes trailIconResId: Int? = null,
     onClick: (() -> Unit)? = null,
     trailingContent: (@Composable RowScope.() -> Unit)? = null,
     backgroundColor: Color = MaterialTheme.colorScheme.background,
@@ -50,7 +46,7 @@ fun ListItem(
     Surface(
         modifier = modifier
             .fillMaxWidth()
-            .then(if (onClick != null) Modifier.clickable { onClick() } else Modifier),
+            .then(if (onClick != null) Modifier.clickable { onClick() } else Modifier.clickable {  }),
         color = backgroundColor
     ) {
         Row(
@@ -77,6 +73,7 @@ fun ListItem(
                         }
                         Spacer(modifier = Modifier.width(16.dp))
                     }
+
                     !title.isNullOrBlank() -> {//на случай если нам все таки не будут возвращать эмодзи
                         Box(
                             modifier = Modifier
@@ -134,27 +131,15 @@ fun ListItem(
                         modifier = Modifier.padding(start = 16.dp)
                     )
                 }
-                when {
-                    trailIcon != null -> {
-                        Icon(
-                            imageVector = trailIcon,
-                            contentDescription = null,
-                            tint = trailingIconTintColor,
-                            modifier = Modifier
-                                .padding(start = if (trailText != null) 8.dp else 16.dp)
-                                .size(24.dp)
-                        )
-                    }
-
-                    trailIconResId != null -> {
-                        Image(
-                            painter = painterResource(id = trailIconResId),
-                            contentDescription = null,
-                            modifier = Modifier
-                                .padding(start = if (trailText != null) 8.dp else 16.dp)
-                                .size(24.dp)
-                        )
-                    }
+                if (trailIcon != null) {
+                    Icon(
+                        imageVector = trailIcon,
+                        contentDescription = null,
+                        tint = trailingIconTintColor,
+                        modifier = Modifier
+                            .padding(start = if (trailText != null) 8.dp else 16.dp)
+                            .size(24.dp)
+                    )
                 }
             }
         }

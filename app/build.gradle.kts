@@ -1,11 +1,17 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.plugin.compose)
     alias(libs.plugins.ksp)
     id("com.google.dagger.hilt.android")
+    kotlin("plugin.serialization") version "2.0.21"
 }
-
+val apiToken: String = gradleLocalProperties(
+    projectRootDir = rootDir,
+    providers = providers
+).getProperty("auth.token") ?: ""
 android {
     namespace = "ru.kpfu.itis.ya_financial_manager"
     compileSdk = 35
@@ -18,6 +24,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "SERVER_BASE_URL", "\"https://shmr-finance.ru/api/v1/\"")
+        buildConfigField("String", "AUTH_TOKEN", "\"$apiToken\"")
     }
     buildFeatures {
         compose = true
@@ -40,6 +48,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+    buildFeatures {
+        buildConfig = true
     }
 }
 
@@ -69,5 +80,12 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     implementation (libs.accompanist.systemuicontroller)
     implementation(libs.lottie.compose)
-
+    implementation(libs.jetbrains.kotlinx.collections.immutable)
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+    implementation(libs.retrofit)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
+    implementation(libs.bundles.compose.base)
 }

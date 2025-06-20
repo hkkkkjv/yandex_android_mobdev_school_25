@@ -17,4 +17,22 @@
     <string name="ya_financial_manager">YA Financial Manager</string>
     <string name="my_account">Мой счет</string>
     <string name="search_category">Найти статью</string>
+    <string name="action_history">История</string>
+    <string name="add_expense">Добавить трату</string>
+    <string name="add_income">Добавить доход</string>
+    <string name="edit">Обновить</string>
+    <string name="add_account">Добавить счет</string>
+    <string name="back">Назад</string>
+    <string name="ok">ОК</string>
+    <string name="cancel">Отмена</string>
+    <string name="my_history">Моя история</string>
+    <string name="start_date">Начало</string>
+    <string name="end_date">Конец</string>
+    <string name="amount">Сумма</string>
+    <string name="error">Ошибка</string>
+    <string name="error_no_internet_connection">Отсутствует подключение к интернету</string>
+    <string name="error_no_account_id">Не удалось получить ID счёта</string>
+    <string name="error_loading_failed">Ошибка загрузки</string>
+    <string name="error_unknown">Неизвестная ошибка</string>
+    <string name="error_start_date_after_end">Дата начала позже даты конца</string>
 </resources>

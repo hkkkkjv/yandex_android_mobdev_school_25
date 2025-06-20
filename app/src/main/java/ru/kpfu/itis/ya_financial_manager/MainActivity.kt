@@ -6,8 +6,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import ru.kpfu.itis.ya_financial_manager.navigation.AppNavigator
-import ru.kpfu.itis.ya_financial_manager.navigation.MainHostScreen
+import ru.kpfu.itis.ya_financial_manager.presentation.navigation.AppNavigator
+import ru.kpfu.itis.ya_financial_manager.presentation.navigation.MainHostScreen
 import ru.kpfu.itis.ya_financial_manager.presentation.theme.AppTheme
 import javax.inject.Inject
 
