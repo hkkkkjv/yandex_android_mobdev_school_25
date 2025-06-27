@@ -1,4 +1,5 @@
 import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+import io.gitlab.arturbosch.detekt.Detekt
 
 plugins {
     alias(libs.plugins.android.application)
@@ -7,17 +8,18 @@ plugins {
     alias(libs.plugins.ksp)
     id("com.google.dagger.hilt.android")
     kotlin("plugin.serialization") version "2.0.21"
+    id("io.gitlab.arturbosch.detekt")
 }
 val apiToken: String = gradleLocalProperties(
     projectRootDir = rootDir,
     providers = providers
 ).getProperty("auth.token") ?: ""
 android {
-    namespace = "ru.kpfu.itis.ya_financial_manager"
+    namespace = "ru.kpfu.itis.ya"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "ru.kpfu.itis.ya_financial_manager"
+        applicationId = "ru.kpfu.itis.ya"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
@@ -88,4 +90,13 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.retrofit2.kotlinx.serialization.converter)
     implementation(libs.bundles.compose.base)
+    detektPlugins(libs.detekt.formatting)
+}
+detekt {
+    config.setFrom(files("$projectDir/config/detekt/detekt.yaml"))
+    buildUponDefaultConfig = true
+    allRules = false
+}
+tasks.withType<Detekt>().configureEach {
+    jvmTarget = "1.8"
 }

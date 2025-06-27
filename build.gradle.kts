@@ -5,4 +5,5 @@ plugins {
     alias(libs.plugins.ksp) apply false
     id("com.google.dagger.hilt.android") version "2.51.1" apply false
     kotlin("plugin.serialization") version "2.0.21"
+    id("io.gitlab.arturbosch.detekt") version "1.23.8" apply false
 }
