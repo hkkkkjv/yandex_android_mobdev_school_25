@@ -35,4 +35,8 @@
     <string name="error_loading_failed">Ошибка загрузки</string>
     <string name="error_unknown">Неизвестная ошибка</string>
     <string name="error_start_date_after_end">Дата начала позже даты конца</string>
+    <string name="account_name">Название счета</string>
+    <string name="currency_rub">Российский рубль ₽</string>
+    <string name="currency_usd">Американский доллар $</string>
+    <string name="currency_eur">Евро</string>
 </resources>

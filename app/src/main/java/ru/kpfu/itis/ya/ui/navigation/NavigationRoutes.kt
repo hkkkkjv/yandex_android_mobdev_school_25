@@ -66,7 +66,7 @@ sealed class NavigationRoutes(
         title = R.string.my_account,
         actionIcon = R.drawable.ic_outline_edit_24,
         actionDescription = R.string.edit,
-        // onActionRoute = "edit_account",
+        onActionRoute = "account_edit",
         showFAB = true,
         // onFloatingActionRoute = "add_account",
         floatingActionDescription = R.string.add_account
@@ -99,6 +99,16 @@ sealed class NavigationRoutes(
             "history/${transactionType.name}"
     }
 
+    data object AccountEdit : NavigationRoutes(
+        route = "account_edit",
+        icon = R.drawable.ic_outline_edit_24,
+        actionIcon = R.drawable.ic_check_24,
+        leftIcon = R.drawable.ic_close_24,
+        label = R.string.my_articles,
+        title = R.string.my_articles,
+        showBackButton = true
+    )
+
     companion object {
         val screens = listOf(Expenses, Incomes, Account, Articles, Settings, Splash, History)
         fun fromRoute(route: String?): NavigationRoutes {
@@ -110,6 +120,7 @@ sealed class NavigationRoutes(
                 Articles.route -> Articles
                 Settings.route -> Settings
                 History.route -> History
+                AccountEdit.route -> AccountEdit
                 else -> Expenses
             }
         }

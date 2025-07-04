@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import ru.kpfu.itis.ya.R
-import ru.kpfu.itis.ya.data.NetworkMonitor
+import ru.kpfu.itis.ya.ui.common.NetworkMonitor
 import ru.kpfu.itis.ya.data.local.AccountIdManager
 import ru.kpfu.itis.ya.domain.model.Transaction
 import ru.kpfu.itis.ya.domain.useCase.account.GetAccountsUseCase

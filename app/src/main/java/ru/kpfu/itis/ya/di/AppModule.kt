@@ -4,8 +4,8 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import ru.kpfu.itis.ya.data.NetworkMonitor
-import ru.kpfu.itis.ya.ui.common.NetworkMonitorImpl
+import ru.kpfu.itis.ya.ui.common.NetworkMonitor
+import ru.kpfu.itis.ya.data.repository.NetworkMonitorImpl
 import ru.kpfu.itis.ya.ui.common.ResourceManager
 import ru.kpfu.itis.ya.ui.common.ResourceManagerImpl
 import javax.inject.Singleton

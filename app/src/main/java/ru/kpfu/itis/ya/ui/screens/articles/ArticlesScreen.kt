@@ -84,6 +84,11 @@ fun ArticlesScreen(
 private fun InternalArticlesScreen(accountInfo: AccountResponse) {
     val articles = accountInfo.expenseStats.plus(accountInfo.incomeStats)
     var search by remember { mutableStateOf("") }
+    val filteredArticles = if (search.isBlank()) {
+        articles
+    } else {
+        articles.filter { it.categoryName.contains(search, ignoreCase = true) }
+    }
     Column {
         Row(
             modifier = Modifier
@@ -118,7 +123,7 @@ private fun InternalArticlesScreen(accountInfo: AccountResponse) {
             )
         }
         LazyColumn {
-            items(articles, key = { it.categoryId }) { article ->
+            items(filteredArticles, key = { it.categoryId }) { article ->
                 ListItem(
                     emoji = article.emoji,
                     showIcon = true,

@@ -10,6 +10,7 @@ import androidx.navigation.navArgument
 import kotlinx.coroutines.flow.Flow
 import ru.kpfu.itis.ya.ui.common.TransactionType
 import ru.kpfu.itis.ya.ui.screens.account.AccountScreen
+import ru.kpfu.itis.ya.ui.screens.account_edit.AccountEditScreen
 import ru.kpfu.itis.ya.ui.screens.articles.ArticlesScreen
 import ru.kpfu.itis.ya.ui.screens.expenses.ExpensesScreen
 import ru.kpfu.itis.ya.ui.screens.history.HistoryScreen
@@ -74,6 +75,11 @@ fun AppNavigation(
                 ?: TransactionType.EXPENSES.name
             val transactionType = TransactionType.valueOf(typeString)
             HistoryScreen(transactionType = transactionType)
+        }
+        composable(route = NavigationRoutes.AccountEdit.route) { backStackEntry ->
+            AccountEditScreen(
+                onBack = { navController.popBackStack() }
+            )
         }
     }
 }

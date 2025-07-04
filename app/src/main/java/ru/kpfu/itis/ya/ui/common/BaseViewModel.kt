@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import ru.kpfu.itis.ya.data.NetworkMonitor
 import ru.kpfu.itis.ya.data.local.AccountIdManager
 import ru.kpfu.itis.ya.domain.useCase.account.GetAccountsUseCase
 import ru.kpfu.itis.ya.ui.navigation.AppNavigator

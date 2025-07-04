@@ -1,4 +1,4 @@
-package ru.kpfu.itis.ya.ui.common
+package ru.kpfu.itis.ya.data.repository
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -10,7 +10,7 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
-import ru.kpfu.itis.ya.data.NetworkMonitor
+import ru.kpfu.itis.ya.ui.common.NetworkMonitor
 import javax.inject.Inject
 import javax.inject.Singleton
 
