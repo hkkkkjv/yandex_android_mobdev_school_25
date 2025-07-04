@@ -1,4 +1,4 @@
-package ru.kpfu.itis.ya.data
+package ru.kpfu.itis.ya.ui.common
 
 import kotlinx.coroutines.flow.Flow
 
